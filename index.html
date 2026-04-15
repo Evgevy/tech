@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="body">
+    <div class="wrapper">
+        <div class="header-wrapper">
+            <div class="bg">
+                <img src="img/header.png">
+            </div>
+            <header class="header">
+                <div class="header-main">
+                    <div class="container">
+                        <div class="row align-items-center flex-nowrap">
+                            <div class="col-auto">
+                                <div class="header-logo">
+                                    <a href="/" class="header-logo-link">
+                                        <img src="img/logo.svg" alt="Логотип">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-auto d-none d-xl-block header-nav">
+                                <nav class="nav">
+                                    <ul class="header-list d-flex align-items-center">
+                                        <li class="header-item px-3 px-xl-4">
+                                            <a href="/about" class="header-link">Продукция</a>
+                                        </li>
+                                        <li class="header-item px-3 px-xl-4">
+                                            <a href="/services" class="header-link">Инжиниринг
+                                            </a>
+                                        </li>
+                                        <li class="header-item px-3 px-xl-4">
+                                            <a href="!#" class="header-link">О нас</a>
+                                        </li>
+                                        <li class="header-item px-3 px-xl-4">
+                                            <a href="!#" class="header-link">Контакты</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-auto ms-auto d-flex align-items-center header-right">
+
+                                <div class="header-item-block d-none d-md-flex">
+                                    <a href="tel:+78126001217" class="header-tel">+7 (812) 600-12-17</a>
+                                </div>
+
+                                <div class="header-item-block d-none d-md-flex">
+                                    <button type="button" class="lang active">RU</button>
+                                    <button type="button" class="lang">EN</button>
+                                </div>
+
+                                <div class="header-item-block d-none d-md-flex">
+                                    <button class="search-btn">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16.893 16.92L19.973 20M19 11.5C19 13.4891 18.2098 15.3968 16.8033 16.8033C15.3968 18.2098 13.4891 19 11.5 19C9.51088 19 7.60322 18.2098 6.1967 16.8033C4.79018 15.3968 4 13.4891 4 11.5C4 9.51088 4.79018 7.60322 6.1967 6.1967C7.60322 4.79018 9.51088 4 11.5 4C13.4891 4 15.3968 4.79018 16.8033 6.1967C18.2098 7.60322 19 9.51088 19 11.5Z"
+                                                stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="header-item-block">
+                                    <button class="burger" id="burgerBtn">
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu" id="mobileMenu">
+                    <div class="container">
+                        <nav class="mobile-nav row">
+                            <div class="col-12 col-md-6 mobile-nav-left">
+                                <p>Продукция</p>
+                                <ul class="mobile-list">
+                                    <li><a href="/about">Пробоподготовка</a></li>
+                                    <li><a href="/services">Общелабораторное оборудование</a></li>
+                                    <li><a href="#">Пробирный анализ</a></li>
+                                    <li><a href="#">Лабораторные весы</a></li>
+                                    <li><a href="#">Промышленная химия и реагенты</a></li>
+
+                                    <li><a href="/about">Лабораторная посуда</a></li>
+                                    <li><a href="/services">Элементный анализ</a></li>
+                                    <li><a href="#">Стандартные образцы</a></li>
+                                    <li><a href="#">Мобильные лаборатории</a></li>
+                                    <li><a href="#">Собственное производство</a></li>
+                                    <li><a href="#">Лабораторная мебель</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-md-6 row mobile-nav-right">
+                                <p>Инжиниринг</p>
+                                <div class="row">
+                                    <ul class="mobile-list-right col-12 col-lg-6">
+                                        <li><a href="/about">Подготовка исходных данных для проектирования, оказание
+                                                технической
+                                                помощи</a></li>
+                                        <li><a href="#">Сопровождение строительных работ</a></li>
+                                        <li><a href="#">Комплектация оборудованием новых и действующих лабораторий</a>
+                                        </li>
+                                        <li><a href="/services">Внедрение новых технологических единиц в
+                                                действующие процессы</a></li>
+                                        <li><a href="#">Обучение и консалтинг</a></li>
+                                        <li><a href="#">Помощь в подготовке к аккредитации и сертификации</a></li>
+
+                                    </ul>
+                                    <ul class="mobile-list-right col-12 col-lg-6">
+                                        <li><a href="/services">Пусконаладочные работы</a></li>
+                                        <li><a href="#">Монтаж и сборка</a></li>
+                                        <li><a href="/about">Настройка и наладка</a></li>
+                                        <li><a href="#">Интеграция в действующий технологический процесс</a></li>
+                                        <li><a href="#">Подключение к инженерным системам</a></li>
+                                        <li><a href="#">Проверка работоспособности</a></li>
+                                        <li><a href="#">Обучение и инструктаж персонала</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+
+                </div>
+            </header>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-wrapper">
+                        <div class="row justify-content-between align-items-end hero-top">
+                            <div class="col-auto">
+                                <h1 class="hero-title title">Комплексное оснащение <br>лабораторий для предприятий
+                                    <br>добывающего профиля
+                                </h1>
+                                <h1 class="hero-title-mobile">Комплексное оснащение лабораторий</h1>
+                                <span class="span">предприятий <br>добывающего профиля</span>
+                                <p class="hero-text">Обеспечиваем бесперебойную работу вашей лаборатории — от подбора
+                                    оборудования до настройки процессов</p>
+                                <button class="hero-btn" type="button">Получить расчет</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <main class="main">
+            <section class="garant py-5">
+                <div class="container">
+
+                    <div class="row align-items-start">
+
+                        <!-- LEFT BLOCK -->
+                        <div class="col-12 col-lg-6">
+                            <h2 class="garant-title title">
+                                ИнПроТех — гарант стабильной деятельности предприятий добывающего профиля
+                            </h2>
+
+                            <span class="garant-sub d-block mt-3">
+                                Миссия:
+                            </span>
+
+                            <p class="garant-text mt-2">
+                                Обеспечивать бесперебойную и точную работу лабораторий горнодобывающих предприятий
+                                повышая эффективность производственного цикла клиентов за счет грамотного подбора
+                                оборудования, методик и сервиса
+                            </p>
+                        </div>
+
+                        <!-- RIGHT BLOCK (прижат вправо) -->
+                        <div class="col-12 col-lg-6 ms-auto">
+
+                            <p class="garant-text mb-5">
+                                Дистрибьютор ведущих мировых производителей:
+                            </p>
+
+                            <div class="row garant-list">
+
+                                <!-- ITEM -->
+                                <div class="col-12 garant-item text-start">
+                                    <img src="img/gar1.svg" alt="">
+                                    <p>Сертифицированные стандартные образцы состава руд и горных пород OREAS</p>
+                                </div>
+
+                                <div class="col-12 garant-item text-start">
+                                    <img src="img/gar2.svg" alt="">
+                                    <p>Тигельные <br>и купеляционные печи</p>
+                                </div>
+
+                                <div class="col-12 garant-item text-start">
+                                    <img src="img/gar3.svg" alt="">
+                                    <p>Оборудование для подготовки проб для аналитических и исследовательских
+                                        лабораторий</p>
+                                </div>
+
+                                <div class="col-12 garant-item text-start">
+                                    <img src="img/gar4.svg" alt="">
+                                    <p>Инновационное оборудование и программное обеспечение для горнодобывающей отрасли
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- <section class="scroll-section">
+
+                <div class="scroll-pin">
+
+                    <div class="container">
+
+                        <ul class="scroll-list">
+                            <li class="item">Инжиниринг</li>
+                            <li class="item">Проектирование</li>
+                            <li class="item">Поставка оборудования</li>
+                            <li class="item">Монтаж</li>
+                            <li class="item">Пусконаладка</li>
+                            <li class="item">Обучение</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </section> -->
+
+            <section class="scroll-section">
+                <div class="scroll-section-bg">
+                    <img src="img/scroll-bg.png" alt="Фон">
+                </div>
+                <div class="container">
+
+                    <div class="wheel">
+                        <div class="track">
+
+                            <a href="#" class="wheel-item">Инжиниринг</a>
+                            <a href="#" class="wheel-item">Обучение персонала</a>
+                            <a href="#" class="wheel-item">Пусконаладочные работы</a>
+                            <a href="#" class="wheel-item">Поставка оборудования</a>
+                            <a href="#" class="wheel-item">Проектирование лабораторий</a>
+                            <a href="#" class="wheel-item">Техническое сопровождение</a>
+                            <a href="#" class="wheel-item">Шеф-монтажные работы</a>
+                            <a href="#" class="wheel-item">Консалтинг</a>
+
+                        </div>
+                    </div>
+
+                    <div class="wheel-mobile">
+                        <div class="row g-2">
+
+
+                            <div class="col-12">
+                                <a href="#" class="wheel-mobile-item">Поставка оборудования</a>
+                            </div>
+
+
+                            <div class="col-6">
+                                <a href="#" class="wheel-mobile-item">Шеф-монтажные работы</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="wheel-mobile-item">Консалтинг</a>
+                            </div>
+
+
+                            <div class="col-12">
+                                <a href="#" class="wheel-mobile-item">Пусконаладочные работы</a>
+                            </div>
+
+
+                            <div class="col-6">
+                                <a href="#" class="wheel-mobile-item">Инжиниринг</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="wheel-mobile-item">Обучение персонала</a>
+                            </div>
+
+
+                            <div class="col-12">
+                                <a href="#" class="wheel-mobile-item">Проектирование лабораторий</a>
+                            </div>
+
+
+                            <div class="col-12">
+                                <a href="#" class="wheel-mobile-item">Техническое сопровождение</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="way">
+                <div class="container">
+                    <p class="way-small">направления деятельности</p>
+                    <div class="way-top row align-items-start justify-content-between">
+                        <div class="col-12 col-lg-6">
+                            <h2 class="way-title title">
+                                Надежный партнер <br>в оснащении лабораторий <br>с 2015 года
+                            </h2>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <p class="way-text">
+                                Подбор и поставка современного технологичного оборудования, оригинальных запчастей
+                                и расходных материалов, пусконаладочные работы и сервисное обслуживание для гарантии
+                                оптимальной работы оборудования
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mt-4 g-4 way-list">
+
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <a href="#!" class="way-card">
+                                <h3>Пробоподготовка</h3>
+                                <img src="img/way1.png" alt="Оборудование" class="way-img img-1">
+                            </a>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <a href="#!" class="way-card">
+                                <h3>Модульные <br>лаборатории</h3>
+                                <img src="img/way2.png" alt="Оборудование" class="way-img img-2">
+                            </a>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <a href="#!" class="way-card">
+                                <h3>Стандартные <br>образцы</h3>
+                                <img src="img/way3.png" alt="Оборудование" class="way-img img-3">
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <a href="#!" class="way-card">
+                                <h3>Пробирный <br>анализ</h3>
+                                <img src="img/way4.png" alt="Оборудование" class="way-img img-1">
+                            </a>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <a href="#!" class="way-card">
+                                <h3>Элементный <br>анализ</h3>
+                                <img src="img/way5.png" alt="Оборудование" class="way-img img-2">
+                            </a>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <a href="#!" class="way-card">
+                                <h3>Общелабораторное <br>оборудование</h3>
+                                <img src="img/way6.png" alt="Оборудование" class="way-img img-1">
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <a href="#!" class="way-card">
+                                <h3>Собственное <br>производство</h3>
+                                <img src="img/way7.png" alt="Оборудование" class="way-img img-1">
+                            </a>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <a href="#!" class="way-card">
+                                <h3>Лабораторная <br>мебель</h3>
+                                <img src="img/way8.png" alt="Оборудование" class="way-img img-2">
+                            </a>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <a href="#!" class="way-card">
+                                <h3>Лабораторные <br>весы</h3>
+                                <img src="img/way9.png" alt="Оборудование" class="way-img img-1">
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <a href="#!" class="way-card">
+                                <h3>Лабораторная <br>посуда</h3>
+                                <img src="img/way10.png" alt="Оборудование" class="way-img img-1">
+                            </a>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <a href="#!" class="way-card">
+                                <h3>Промышленная <br>химия и реагенты</h3>
+                                <img src="img/way11.png" alt="Оборудование" class="way-img img-2">
+                            </a>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <a href="#!" class="way-card">
+                                <h3>Контрольно-измерительные <br>приборы и автоматика</h3>
+                                <img src="img/way12.png" alt="Оборудование" class="way-img img-1">
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="numbers">
+                <div class="numbers-bg">
+                    <img src="img/num-bg.png" alt="Фон">
+                </div>
+                <div class="numbers-img">
+                    <img src="img/num1.png" alt="Логотип">
+                </div>
+                <div class="container">
+                    <div class="row g-2 g-lg-0 numbers-list">
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">312</p>
+                                <p class="numbers-text">государственных <br>контрактов</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">5 427</p>
+                                <p class="numbers-text">реализованных <br>проектов</p>
+                            </div>
+                        </div>
+
+                        <div class="d-none d-lg-block col-lg-3">
+                            <div class="numbers-item border-top">
+                                <p class="numbers-num"></p>
+                                <p class="numbers-text"></p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">4</p>
+                                <p class="numbers-text">филиала</p>
+                            </div>
+                        </div>
+
+                        <div class="d-none d-lg-block col-lg-3">
+                            <div class="numbers-item border-left">
+                                <p class="numbers-num"></p>
+                                <p class="numbers-text"></p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">100%</p>
+                                <p class="numbers-text">результат на каждом этапе <br>сотрудничества</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">2 731</p>
+                                <p class="numbers-text">выигранный <br>тендер</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">>80</p>
+                                <p class="numbers-text">дистрибьюторских <br>соглашений</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-sub">Собственное <br>производство</p>
+                                <p class="numbers-text">ЗИП <br>и комплектующих</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-sub">Подтвержденный <br>лидер отрасли</p>
+                                <p class="numbers-text">ежегодный обладатель <br>международных наград</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="reviews-line">
+                <div class="reviews-line-wrapper">
+                    <div class="container">
+
+                        <h2 class="reviews-line-title title">Нам доверяют</h2>
+                    </div>
+                    <div class="marquee">
+                        <div class="marquee-track mb-5" id="marqueeTrack">
+
+                            <div class="marquee-group">
+                                <img src="img/line1.png">
+                                <img src="img/line2.png">
+                                <img src="img/line3.png">
+                                <img src="img/line4.png">
+                                <img src="img/line5.png">
+                                <img src="img/line6.png">
+                            </div>
+
+                            <div class="marquee-group">
+                                <img src="img/line1.png">
+                                <img src="img/line2.png">
+                                <img src="img/line3.png">
+                                <img src="img/line4.png">
+                                <img src="img/line5.png">
+                                <img src="img/line6.png">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 2 строка -->
+                    <div class="marquee">
+                        <div class="marquee-track" id="marqueeTrackRev">
+
+                            <div class="marquee-group">
+                                <img src="img/line7.png">
+                                <img src="img/line8.png">
+                                <img src="img/line9.png">
+                                <img src="img/line10.png">
+                                <img src="img/line11.png">
+                            </div>
+
+                            <div class="marquee-group">
+                                <img src="img/line7.png">
+                                <img src="img/line8.png">
+                                <img src="img/line9.png">
+                                <img src="img/line10.png">
+                                <img src="img/line11.png">
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <a href="#" class="reviews-line-link">Отзывы компаний</a>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="news-main">
+                <div class="container">
+
+                    <!-- HEADER -->
+                    <div class="news-main-header d-flex justify-content-between align-items-center">
+                        <h2 class="title">Новости</h2>
+
+                        <a href="#" class="news-main-all d-none d-md-inline">
+                            Все новости
+                        </a>
+                    </div>
+
+                    <!-- BODY -->
+                    <div class="row justify-content-between news-main-grid">
+
+                        <!-- LEFT BIG NEWS -->
+                        <div class="col-12 col-lg-7">
+
+                            <a href="#" class="news-main-card news-main-card--big">
+
+                                <div class="news-main-img mb-4">
+                                    <img src="img/n1.png" alt="Новость">
+                                </div>
+
+                                <div class="news-main-meta">
+                                    24.07.2025 / 10 минут
+                                </div>
+
+                                <h3 class="news-main-title">
+                                    ИнПроТех отмечает юбилей — <br>10 лет
+                                </h3>
+
+                                <p class="news-main-text">
+                                    Не просто повод для гордости, а свидетельство устойчивого роста,
+                                    стратегического развития и безупречной репутации, которые стали основой
+                                    нашего долгосрочного партнерства с клиентами
+                                </p>
+
+                            </a>
+
+                        </div>
+
+                        <!-- RIGHT NEWS -->
+                        <div class="col-12 col-lg-4 offset-lg-1 d-flex flex-column news-main-list">
+
+                            <a href="#" class="news-main-card news-main-card--small">
+
+                                <div class="news-main-img mb-4">
+                                    <img src="img/n2.png" alt="Новость">
+                                </div>
+
+                                <div class="news-main-meta mb-4">
+                                    24.07.2025 / 10 минут
+                                </div>
+
+                                <h3 class="news-main-title">
+                                    11-й Международный <br>форум MINEX в Ташкенте
+                                </h3>
+
+                            </a>
+
+                            <a href="#" class="news-main-card news-main-card--small">
+
+                                <div class="news-main-img mb-4">
+                                    <img src="img/n3.png" alt="Новость">
+                                </div>
+
+                                <div class="news-main-meta mb-4">
+                                    24.07.2025 / 10 минут
+                                </div>
+
+                                <h3 class="news-main-title">
+                                    Эксклюзивные поставки <br>NCS Testing Technology
+                                </h3>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- MOBILE LINK -->
+                    <div class="d-md-none text-center mt-4">
+                        <a href="#" class="news-main-all">
+                            Все новости
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="about-main">
+                <div class="about-main-bg">
+                    <img src="img/scroll-bg.png" alt="Фон">
+                </div>
+                <div class="container">
+                    <p class="way-small">о нас</p>
+                    <div class="about-main-top d-flex justify-content-between">
+                        <h2 class="about-main-title title col-12 col-lg-6"><strong>Основа команды ИнПроТех —
+                            </strong>инженеры с&nbsp;высшим профильным
+                            образованием, которые регулярно проходят обучение у наших партнеров <br>и следят за
+                            новинками в&nbsp;сфере оснащения лабораторий</h2>
+
+                        <p class="about-main-text d-none d-lg-inline col-4">
+                            Наш опыт позволяет подбирать оптимальные решения для всех видов лабораторий, оказывать
+                            консалтинговые и инжиниринговые услуги и проводить обучение персонала
+                        </p>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-12 col-lg-6">
+                            <div class="about-main-left">
+                                <div class="about-main-big">
+                                    <img src="img/team1.png" alt="Команда">
+                                </div>
+                                <p class="d-lg-none">Наш опыт позволяет подбирать оптимальные решения для всех видов
+                                    лабораторий, оказывать консалтинговые и инжиниринговые услуги и проводить обучение
+                                    персонала</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 ">
+                            <div class="about-main-card d-flex flex-column">
+                                <div class="about-main-img mb-5">
+                                    <img src="img/team2.png" alt="Команда">
+                                </div>
+                                <p>Филиалы в&nbsp;Казахстане и&nbsp;Германии обеспечивают нам глобальное присутствие
+                                    и&nbsp;возможность
+                                    оперативного взаимодействия с&nbsp;клиентами</p>
+                                <a href="#">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-main">
+                <div class="container">
+
+                    <!-- TOP -->
+                    <div class="form-main-top row align-items-start justify-content-between">
+                        <h2 class="form-title title col-12 col-lg-6">
+                            Проанализируем запрос <br>и&nbsp;подготовим индивидуальное <br>КП
+                        </h2>
+
+                        <p class="form-main-text col-12 col-lg-5">
+                            Не предлагаем шаблонов — учитываем <br>все нужды вашей компании
+                        </p>
+                    </div>
+
+                    <!-- FORM -->
+                    <form class="form-main-form row justify-content-between">
+
+                        <!-- LEFT -->
+                        <div class="col-12 col-lg-6 form-left">
+
+                            <h3 class="form-main-subtitle">Контактные данные</h3>
+
+                            <input type="text" placeholder="Имя" class="form-input">
+                            <input type="tel" placeholder="Телефон" class="form-input">
+                            <input type="email" placeholder="Email" class="form-input">
+
+                        </div>
+
+                        <!-- RIGHT -->
+                        <div class="col-12 col-lg-5 form-right">
+
+                            <h3 class="form-main-subtitle">Какое направление вас интересует?</h3>
+
+                            <!-- кастом select -->
+                            <div class="custom-select" id="customSelect">
+                                <div class="select-head">
+                                    Выберите из списка
+                                </div>
+
+                                <div class="select-list">
+                                    <div class="select-item">Направление 1</div>
+                                    <div class="select-item">Направление 2</div>
+                                    <div class="select-item">Направление 3</div>
+                                </div>
+                            </div>
+
+                            <textarea placeholder="Оставьте комментарий" class="form-textarea"></textarea>
+
+                            <button type="submit" class="form-main-btn">
+                                Получить КП
+                            </button>
+
+                            <label class="form-checkbox">
+                                <input type="checkbox" checked>
+                                <span>
+                                    Нажимая кнопку, я соглашаюсь с политикой конфиденциальности</span>
+                            </label>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </section>
+
+
+        </main>
+        <footer class="footer">
+            <div class="footer-bg">
+                <img src="img/footer-bg.png" alt="Фон">
+            </div>
+            <div class="container">
+
+                <div class="row footer-grid">
+
+                    <!-- 1 -->
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 footer-hide-390">
+                        <h3 class="footer-name">Инжиниринг</h3>
+
+
+
+                        <ul class="footer-list">
+                            <li><a href="#">Подготовка исходных данных для проектирования, оказание технической
+                                    помощи</a></li>
+                            <li><a href="#">Сопровождение строительных работ</a></li>
+                            <li><a href="#">Комплектация оборудованием новых и&nbsp;действующих лабораторий</a></li>
+                            <li><a href="#">Внедрение новых технологических единиц в действующие процессы</a></li>
+                            <li><a href="#">Обучение и консалтинг</a></li>
+                            <li><a href="#">Помощь в подготовке к&nbsp; аккредитации и сертификации</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-5 footer-another">
+                        <ul class="footer-list">
+                            <li><a href="#">Пусконаладочные работы</a></li>
+                            <li><a href="#">Монтаж и сборка</a></li>
+                            <li><a href="#">Настройка и наладка</a></li>
+                            <li><a href="#">Интеграция в действующий технологический процесс</a></li>
+                            <li><a href="#">Подключение к&nbsp; инженерным системам</a></li>
+                            <li><a href="#">Проверка работоспособности</a></li>
+                            <li><a href="#">Обучение и инструктаж персонала</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 footer-hide-390">
+                        <h3 class="footer-name">Продукция</h3>
+
+                        <ul class="footer-list">
+                            <li><a href="#">Пробоподготовка</a></li>
+                            <li><a href="#">Пробирный анализ</a></li>
+                            <li><a href="#">Промышленная химия и реагенты</a></li>
+                            <li><a href="#">Элементный анализ</a></li>
+                            <li><a href="#">Мобильные лаборатории</a></li>
+                            <li><a href="#">Лабораторная мебель</a></li>
+                            <li><a href="#">Общелабораторное оборудование</a></li>
+                            <li><a href="#">Лабораторные весы</a></li>
+                            <li><a href="#">Лабораторная посуда</a></li>
+                            <li><a href="#">Стандартные образцы</a></li>
+                            <li><a href="#">Собственное производство</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+
+                        <div class="footer-contacts">
+
+                            <div class="footer-address">
+                                <p>199406, г. Санкт-Петербург, ул. Гаванская д. 43</p>
+
+                                <a href="#">Смотреть на карте</a>
+                            </div>
+
+                            <div class="footer-phones">
+                                <a href="mailto:info@enprotech.ru">info@enprotech.ru</a>
+                                <a href="tel:+78126001217">+7 (812) 600-12-17</a>
+                            </div>
+
+                            <div class="footer-socials">
+                                <a href="#"><img src="img/what.svg" alt="Иконка"></a>
+                                <a href="#"><img src="img/vk.svg" alt="Иконка"></a>
+                                <a href="#"><img src="img/teleg.svg" alt="Иконка"></a>
+                                <a href="#"><img src="img/youtube.svg" alt="Иконка"></a>
+                                <a href="#"><img src="img/insta.svg" alt="Иконка"></a>
+                                <a href="#"><img src="img/pinter.svg" alt="Иконка"></a>
+                            </div>
+
+                            <ul class="footer-links">
+                                <li><a href="#">О нас</a></li>
+                                <li><a href="#">Новости</a></li>
+                                <li><a href="#">Блог</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="footer-bottom row align-items-center">
+
+                    <div class="col-12 col-lg-3">
+                        <a href="#" class="footer-bottom-link">
+                            Политика конфиденциальности
+                        </a>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <a href="#" class="footer-bottom-link">
+                            Политика обработки персональных данных
+                        </a>
+                    </div>
+
+                    <div class="col-12 col-lg-3">
+                        <a href="#" class="doctor">
+                            <img src="img/doctor.svg" alt="КДМ">
+                            Сделано в «Клинике <br>доброго маркетолога»
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
