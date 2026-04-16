@@ -50,7 +50,7 @@ ul {
 
 .header-wrapper {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 1;
 }
 
@@ -218,17 +218,21 @@ ul {
     width: 100%;
     background: rgba(0, 0, 0, 1);
     padding: 50px 20px;
-
     transform: translateX(100%);
     transition: 0.3s ease;
-
-    z-index: 1000;
+    z-index: 9999;
 
     overflow-y: auto; 
     scrollbar-width: none;
 
     -ms-overflow-style: none;
 }
+
+@media screen and (max-width: 550px) {
+    .mobile-menu {
+        top: 80px;
+    }
+} 
 
 .mobile-menu::after {
     content: '';
