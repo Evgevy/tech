@@ -763,6 +763,12 @@ ul {
     height: auto;
     aspect-ratio: 750/512;
     border: 1px solid rgba(55, 55, 55, 1);
+    filter: grayscale(100%);
+    transition: .3s;
+}
+
+.news-main-card.news-main-card--big:hover .news-main-img {
+    filter: grayscale(0%);
 }
 
 .news-main-meta {
