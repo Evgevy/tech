@@ -78,161 +78,297 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const select = document.getElementById("customSelect");
-    const head = select.querySelector(".select-head");
-    const items = select.querySelectorAll(".select-item");
+    
 
-    head.addEventListener("click", () => {
-        select.classList.toggle("active");
-    });
-
-    items.forEach(item => {
-        item.addEventListener("click", () => {
-        head.textContent = item.textContent;
-        select.classList.remove("active");
+    if(select) {
+        const head = select.querySelector(".select-head");
+        const items = select.querySelectorAll(".select-item");
+        
+        head.addEventListener("click", () => {
+            select.classList.toggle("active");
         });
+
+        items.forEach(item => {
+            item.addEventListener("click", () => {
+            head.textContent = item.textContent;
+            select.classList.remove("active");
+            });
+        });
+    
+        document.addEventListener("click", (e) => {
+            if (!select.contains(e.target)) {
+            select.classList.remove("active");
+            }
+        });
+    }
+   
+
+    
+
+
+
+    const track = document.querySelector(".track");
+
+    if (track) {
+
+        const ITEM_HEIGHT = 85;
+    const CENTER_INDEX = 3;
+
+    let offset = 0;
+    let isAnimating = false;
+
+    function setActive() {
+    const items = document.querySelectorAll(".wheel-item");
+
+    items.forEach(el => el.classList.remove("active"));
+
+    items[CENTER_INDEX]?.classList.add("active");
+    }
+
+    setActive();
+
+    function move() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    offset++;
+
+    track.style.transition = "transform 800ms cubic-bezier(0.22, 1, 0.36, 1)";
+    track.style.transform = `translateY(-${offset * ITEM_HEIGHT}px)`;
+
+    setActive();
+
+    setTimeout(() => {
+
+        const first = track.firstElementChild;
+
+        track.style.transition = "none";
+
+        track.appendChild(first);
+
+        offset--;
+
+        track.style.transform = `translateY(-${offset * ITEM_HEIGHT}px)`;
+
+        isAnimating = false;
+
+    }, 800);
+    }
+
+    setInterval(move, 1800);
+
+    }
+
+    
+
+
+    let managerSwiper;
+
+    function initManagerSlider() {
+        const sliderEl = document.querySelector(".manager-slider");
+        if (!sliderEl) return;
+
+        if (window.innerWidth <= 768 && !managerSwiper) {
+            managerSwiper = new Swiper(sliderEl, {
+                slidesPerView: 1.2,
+                spaceBetween: 16,
+                speed: 600,
+                grabCursor: true,
+            });
+        }
+
+        if (window.innerWidth > 768 && managerSwiper) {
+            managerSwiper.destroy(true, true);
+            managerSwiper = null;
+        }
+    }
+
+    initManagerSlider();
+
+    let resizeTimeout;
+
+    window.addEventListener("resize", () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(initManagerSlider, 200);
     });
 
-    document.addEventListener("click", (e) => {
-        if (!select.contains(e.target)) {
-        select.classList.remove("active");
+
+    
+
+    
+
+    // const principleElements = gsap.utils.toArray(".principles-item");
+    
+    // let state = { index: 0 };
+    
+    // function render(activeIndex) {
+    
+    //   principleElements.forEach((el, i) => {
+    
+    //     // активный ВСЕГДА доезжает в одну и ту же точку (0)
+    //     if (i === activeIndex) {
+    
+    //       gsap.to(el, {
+    //         y: 0,
+    //         opacity: 1,
+    //         scale: 1,
+    //         duration: 0.5,
+    //         ease: "power2.out"
+    //       });
+    
+    //     }
+    
+    //     // все предыдущие УХОДЯТ ВВЕРХ (за экран)
+    //     else if (i < activeIndex) {
+    
+    //       gsap.to(el, {
+    //         y: -200,   // вверх за границу
+    //         opacity: 0,
+    //         duration: 0.5,
+    //         ease: "power2.out"
+    //       });
+    
+    //     }
+    
+    //     // следующие пока ждут
+    //     else {
+    
+    //       gsap.to(el, {
+    //         y: 0,
+    //         opacity: 0.2,
+    //         scale: 0.98,
+    //         duration: 0.5,
+    //         ease: "power2.out"
+    //       });
+    
+    //     }
+    
+    //   });
+    
+    // }
+    
+    // ScrollTrigger.create({
+    //   trigger: ".principles",
+    //   start: "top top",
+    //   end: "+=2500",
+    //   pin: true,
+    //   scrub: true,
+    
+    //   onUpdate: (self) => {
+    
+    //     const index = Math.round(
+    //       self.progress * (principleElements.length - 1)
+    //     );
+    
+    //     if (index !== state.index) {
+    //       state.index = index;
+    //       render(index);
+    //     }
+    
+    //   }
+    // });
+    
+    // render(0);
+
+    
+
+    const mm = gsap.matchMedia();
+
+    // desktop only
+    mm.add("(min-width: 1200px)", () => {
+
+    const items = gsap.utils.toArray(".principles-item");
+
+    const STEP = 120;
+    const GAP = 40;
+    const TOTAL_STEP = STEP + GAP;
+
+    function layout(activeIndex) {
+
+        items.forEach((el, i) => {
+
+        const diff = i - activeIndex;
+
+        let opacity = 0.1;
+
+        if (i === activeIndex) {
+            opacity = 1;
+        } 
+        else if (i === activeIndex + 1) {
+            opacity = 0.6;
+        } 
+        else if (i === activeIndex + 2) {
+            opacity = 0.4;
+        } 
+        else if (i < activeIndex) {
+            opacity = 0.1;
+        }
+
+        gsap.to(el, {
+            y: diff * TOTAL_STEP,
+            opacity: opacity,
+            scale: i === activeIndex ? 1 : 0.98,
+            duration: 0.45,
+            ease: "power2.out",
+            overwrite: true
+        });
+
+        });
+
+    }
+
+    let state = { index: 0 };
+
+    const trigger = ScrollTrigger.create({
+        trigger: ".principles",
+        start: "top top",
+        end: "+=" + (items.length * 800),
+        pin: true,
+        scrub: true,
+
+        onUpdate: (self) => {
+
+        const index = Math.min(
+            items.length - 1,
+            Math.floor(self.progress * items.length)
+        );
+
+        if (index !== state.index) {
+            state.index = index;
+            layout(index);
+        }
+
         }
     });
 
+    layout(0);
 
+    // cleanup when breakpoint breaks
+    return () => {
+        trigger.kill();
+    };
 
-    // ScrollTrigger.matchMedia({
+    });
 
-    //     "(min-width: 991px)": function () {
-      
-    //       const items = gsap.utils.toArray(".item");
-    //       const list = document.querySelector(".scroll-list");
-      
-    //       if (!items.length || !list) return;
-      
-    //       const step = items[0].offsetHeight + 18;
-    //       const total = step * (items.length - 1);
-      
-    //       let lastIndex = -1; // ✅ ВНЕ scrollTrigger
-      
-    //       gsap.to(list, {
-    //         y: -total,
-    //         ease: "none",
-      
-    //         scrollTrigger: {
-    //           trigger: ".scroll-section",
-    //           start: "top top",
-    //           end: () => "+=" + (total * 2.5),
-    //           scrub: 1.5,
-    //           pin: true,
-    //           anticipatePin: 1,
-    //           invalidateOnRefresh: true,
-      
-    //           onUpdate: (self) => {
-      
-    //             const raw = self.progress * (items.length - 1);
-    //             const threshold = 0.25;
-      
-    //             let index = Math.floor(raw + threshold);
-    //             index = Math.min(items.length - 1, index);
-      
-    //             if (index !== lastIndex) {
-      
-    //               items.forEach(el => el.classList.remove("active"));
-    //               items[index]?.classList.add("active");
-      
-    //               lastIndex = index;
-    //             }
-    //           }
-    //         }
-      
-    //       });
-      
-    //     }
-      
-    //   });
-    
+    const centerSlider = new Swiper(".center-slider", {
+        slidesPerView: "auto",
+        spaceBetween: 24,
+        loop: true,
+        speed: 5000,
+        autoplay: {
+          delay: 500,
+          disableOnInteraction: false
+        },
+        freeMode: true,
+        grabCursor: true,
+        breakpoints: {
+            300: {
+              spaceBetween: 10
+            },
+            550: {
+              spaceBetween: 24
+            }
+        }
+    });
 
-// const swiper = new Swiper(".wheel", {
-//   direction: "vertical",
-//   slidesPerView: 2,
-//   centeredSlides: true,
-//   speed: 600,
-//   loop: true,
-  
-//   mousewheel: false
-// });
-
-// ScrollTrigger.create({
-//   trigger: ".scroll-section",
-//   start: "top top",
-//   end: "+=2000", 
-//   pin: true,
-//   scrub: true,
-
-//   onUpdate: (self) => {
-//     const progress = self.progress;
-
-//     // двигаем swiper вручную
-//     const max = swiper.slides.length - 1;
-//     const index = Math.round(progress * max);
-
-//     swiper.slideTo(index);
-//   }
-// });
-
-const track = document.querySelector(".track");
-
-const ITEM_HEIGHT = 85;
-const CENTER_INDEX = 3;
-
-let offset = 0;
-let isAnimating = false;
-
-function setActive() {
-  const items = document.querySelectorAll(".wheel-item");
-
-  items.forEach(el => el.classList.remove("active"));
-
-  // центр всегда визуальный
-  items[CENTER_INDEX]?.classList.add("active");
-}
-
-setActive();
-
-function move() {
-  if (isAnimating) return;
-  isAnimating = true;
-
-  offset++;
-
-  // 🔥 1. двигаем
-  track.style.transition = "transform 800ms cubic-bezier(0.22, 1, 0.36, 1)";
-  track.style.transform = `translateY(-${offset * ITEM_HEIGHT}px)`;
-
-  // 🔥 2. active сразу (без ожидания DOM)
-  setActive();
-
-  // 🔥 3. после завершения — НЕ reset через transition
-  setTimeout(() => {
-
-    const first = track.firstElementChild;
-
-    // 🔥 выключаем анимацию ДО изменений
-    track.style.transition = "none";
-
-    // 🔥 переносим DOM
-    track.appendChild(first);
-
-    // 🔥 возвращаем offset назад БЕЗ визуального скачка
-    offset--;
-
-    // 🔥 компенсируем позицию без перехода
-    track.style.transform = `translateY(-${offset * ITEM_HEIGHT}px)`;
-
-    isAnimating = false;
-
-  }, 800);
-}
-
-setInterval(move, 1800);
 });

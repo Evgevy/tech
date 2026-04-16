@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="body-about">
+    <div class="wrapper">
+        <div class="header-wrapper">
+            <header class="header header--black">
+                <div class="header-main">
+                    <div class="container">
+                        <div class="row align-items-center flex-nowrap">
+                            <div class="col-auto">
+                                <div class="header-logo">
+                                    <a href="/" class="header-logo-link">
+                                        <img src="img/logo.svg" alt="Логотип">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-auto d-none d-xl-block header-nav">
+                                <nav class="nav">
+                                    <ul class="header-list d-flex align-items-center">
+                                        <li class="header-item px-3 px-xl-4">
+                                            <a href="/about" class="header-link">Продукция</a>
+                                        </li>
+                                        <li class="header-item px-3 px-xl-4">
+                                            <a href="/services" class="header-link">Инжиниринг
+                                            </a>
+                                        </li>
+                                        <li class="header-item px-3 px-xl-4">
+                                            <a href="!#" class="header-link">О нас</a>
+                                        </li>
+                                        <li class="header-item px-3 px-xl-4">
+                                            <a href="!#" class="header-link">Контакты</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-auto ms-auto d-flex align-items-center header-right">
+
+                                <div class="header-item-block d-none d-md-flex">
+                                    <a href="tel:+78126001217" class="header-tel">+7 (812) 600-12-17</a>
+                                </div>
+
+                                <div class="header-item-block d-none d-md-flex">
+                                    <button type="button" class="lang active">RU</button>
+                                    <button type="button" class="lang">EN</button>
+                                </div>
+
+                                <div class="header-item-block d-none d-md-flex">
+                                    <button class="search-btn">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16.893 16.92L19.973 20M19 11.5C19 13.4891 18.2098 15.3968 16.8033 16.8033C15.3968 18.2098 13.4891 19 11.5 19C9.51088 19 7.60322 18.2098 6.1967 16.8033C4.79018 15.3968 4 13.4891 4 11.5C4 9.51088 4.79018 7.60322 6.1967 6.1967C7.60322 4.79018 9.51088 4 11.5 4C13.4891 4 15.3968 4.79018 16.8033 6.1967C18.2098 7.60322 19 9.51088 19 11.5Z"
+                                                stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="header-item-block">
+                                    <button class="burger" id="burgerBtn">
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu" id="mobileMenu">
+                    <div class="container">
+                        <nav class="mobile-nav row">
+                            <div class="col-12 col-md-6 mobile-nav-left">
+                                <p>Продукция</p>
+                                <ul class="mobile-list">
+                                    <li><a href="/about">Пробоподготовка</a></li>
+                                    <li><a href="/services">Общелабораторное оборудование</a></li>
+                                    <li><a href="#">Пробирный анализ</a></li>
+                                    <li><a href="#">Лабораторные весы</a></li>
+                                    <li><a href="#">Промышленная химия и реагенты</a></li>
+
+                                    <li><a href="/about">Лабораторная посуда</a></li>
+                                    <li><a href="/services">Элементный анализ</a></li>
+                                    <li><a href="#">Стандартные образцы</a></li>
+                                    <li><a href="#">Мобильные лаборатории</a></li>
+                                    <li><a href="#">Собственное производство</a></li>
+                                    <li><a href="#">Лабораторная мебель</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-md-6 row mobile-nav-right">
+                                <p>Инжиниринг</p>
+                                <div class="row">
+                                    <ul class="mobile-list-right col-12 col-lg-6">
+                                        <li><a href="/about">Подготовка исходных данных для проектирования, оказание
+                                                технической
+                                                помощи</a></li>
+                                        <li><a href="#">Сопровождение строительных работ</a></li>
+                                        <li><a href="#">Комплектация оборудованием новых и действующих лабораторий</a>
+                                        </li>
+                                        <li><a href="/services">Внедрение новых технологических единиц в
+                                                действующие процессы</a></li>
+                                        <li><a href="#">Обучение и консалтинг</a></li>
+                                        <li><a href="#">Помощь в подготовке к аккредитации и сертификации</a></li>
+
+                                    </ul>
+                                    <ul class="mobile-list-right col-12 col-lg-6">
+                                        <li><a href="/services">Пусконаладочные работы</a></li>
+                                        <li><a href="#">Монтаж и сборка</a></li>
+                                        <li><a href="/about">Настройка и наладка</a></li>
+                                        <li><a href="#">Интеграция в действующий технологический процесс</a></li>
+                                        <li><a href="#">Подключение к инженерным системам</a></li>
+                                        <li><a href="#">Проверка работоспособности</a></li>
+                                        <li><a href="#">Обучение и инструктаж персонала</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+
+                </div>
+            </header>
+        </div>
+        <main class="main">
+            <nav class="breadcrumbs">
+                <div class="container">
+                    <a href="/">Инпротех</a>
+                    <span class="separator">/</span>
+                    <span>О нас</span>
+                </div>
+
+            </nav>
+
+            <div class="section-title">
+                <div class="container">
+                    <p>О нас</p>
+                </div>
+
+            </div>
+
+            <section class="a-hero">
+                <div class="a-hero-bg">
+                    <img src="img/a-hero-bg.png" alt="Фон">
+                </div>
+                <div class="container">
+
+                    <h1 class="a-hero-title title">Люди в черном — на&nbsp;службе <br>технологий добывающей
+                    </h1>
+
+
+
+                </div>
+                <div class="a-hero-img">
+                    <img src="img/a-hero.png" alt="Команда">
+                </div>
+            </section>
+
+            <section class="chtat">
+                <div class="container">
+
+                    <!-- Заголовок -->
+                    <h2 class="chtat-title title col-12 col-lg-10">Инженерно-технический штат компании «ИнПроТех»
+                        сформирован из
+                        специалистов
+                        с профильным образованием и практическим опытом работы на&nbsp;производственных площадках</h2>
+
+                    <!-- Текст -->
+                    <p class="chtat-intro col-12 col-lg-8">
+                        Глубокое понимание технологических процессов, знание специфики отрасли «изнутри» и высокий
+                        уровень экспертизы позволяют нам предлагать прикладные, обоснованные решения, соответствующие
+                        реальным задачам заказчиков.
+                    </p>
+
+                    <!-- Контент -->
+                    <div class="row align-items-start justify-content-between chtat-list">
+
+                        <!-- ЛЕВО -->
+                        <div class="col-lg-5">
+                            <div class="chtat-person">
+
+                                <img src="img/gen.png" alt="Сотрудник" class="chtat-photo">
+
+                                <div class="chtat-name">Першина Анастасия Викторовна</div>
+                                <div class="chtat-role">Директор группы компаний «ИнПроТех» к. т. н.</div>
+
+                            </div>
+                        </div>
+
+                        <!-- ПРАВО -->
+                        <div class="col-lg-7">
+                            <div class="chtat-text">
+                                <div class="chtat-text-bg">
+                                    <img src="img/left.png" alt="Фон">
+                                </div>
+                                <p>Группа компаний «ИнПроТех» успешно работает на рынке горнодобывающей промышленности с
+                                    2015 года, предлагая первоклассные решения для предприятий отрасли.</p>
+                                <p>Наши представительства расположены в странах СНГ и Европы,что обеспечивает нам
+                                    глобальное присутствие и возможность оперативного взаимодействия с клиентами.</p>
+                                <p>Наш профиль — комплексное оснащение лабораторий горнодобывающих предприятий.</p>
+                                <p>Основная специализация: направление золотодобычи и пробирно-аналитические
+                                    лаборатории.</p>
+                                <p>Наш опыт и знания позволяют подобрать наиболе оптимальные решения для всех видов
+                                    лабораторий, оказывать консалтинговые и инжиниринговые услуги, проводить обучение
+                                    персонала.</p>
+                                <p>ИнПроТех — это передовые технологии и профессиональные решениядля бесперебойной
+                                    работы лабораторий Заказчика.</p>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="manager">
+                <div class="container">
+
+                    <div class="manager-slider swiper">
+                        <div class="swiper-wrapper">
+
+                            <!-- CARD -->
+                            <div class="swiper-slide">
+
+                                <img src="img/manager1.png" alt="Работник">
+                                <div class="manager-name">Денис Мыца</div>
+                                <div class="manager-role">Инженер отдела оснащения <br>геологических изысканий</div>
+                                <div class="manager-quote">Цитата сотрудника, подчеркивающая <br>ценности, принципы
+                                    и УТП</div>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <img src="img/manager2.png" alt="Работник">
+                                <div class="manager-name">Дмитрий Белов</div>
+                                <div class="manager-role">Руководитель департамента <br>международной логистики
+                                </div>
+                                <div class="manager-quote">Цитата сотрудника, подчеркивающая <br>ценности, принципы
+                                    и УТП</div>
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <img src="img/manager3.png" alt="Работник">
+                                <div class="manager-name">Алеся Жуковская</div>
+                                <div class="manager-role">Заместитель главного <br>бухгалтера</div>
+                                <div class="manager-quote">Цитата сотрудника, подчеркивающая <br>ценности, принципы
+                                    и УТП</div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section class="mission">
+                <div class="mission-bg">
+                    <img src="img/mission-bg.png" alt="Фон">
+                </div>
+                <div class="mission-mobile">
+                    <img src="img/mission-mobile.png" alt="Фон">
+                </div>
+
+                <div class="container">
+                    <div class="mission-wrapper">
+                        <div class="mission-content">
+                            <h2 class="mission-title title">Миссия</h2>
+                            <p class="mission-text">
+                                Обеспечивать бесперебойную и точную работу лабораторий горнодобывающих предприятий
+                                повышая
+                                эффективность производственного цикла клиентов за счет грамотного подбора оборудования,
+                                методик и сервиса
+                            </p>
+                        </div>
+                        <div class="mission-image">
+                            <img src="img/mission1.png" alt="Логотип">
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </section>
+
+            <section class="gold">
+                <div class="container">
+                    <h2 class="gold-title title">Ценности <br>на вес золота</h2>
+                    <div class="row g-2 numbers-list">
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-text">Ценим труд <br>и&nbsp;время каждого</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-text">Строим открытые <br>и&nbsp;честные <br>взаимоотношения</p>
+                            </div>
+                        </div>
+
+                        <div class="d-none d-lg-block col-lg-3">
+                            <div class="numbers-item-no">
+                                <p class="numbers-num"></p>
+                                <p class="numbers-text"></p>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-3 order1">
+                            <div class="numbers-item">
+                                <p class="numbers-text">Стремимся <br>к&nbsp;профессиональному <br>росту</p>
+                            </div>
+                        </div>
+
+                        <div class="d-none d-lg-block col-lg-3">
+                            <div class="numbers-item-no">
+                                <p class="numbers-num"></p>
+                                <p class="numbers-text"></p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-text">Глубоко вникаем <br>в&nbsp;специфику каждого <br>проекта</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3 order2">
+                            <div class="numbers-item">
+                                <p class="numbers-text">Обеспечиваем <br>добросовестный <br>подход</p>
+                            </div>
+                        </div>
+
+                        <div class="d-none d-lg-block col-lg-3">
+                            <div class="numbers-item-no">
+                                <p class="numbers-num"></p>
+                                <p class="numbers-text"></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="principles">
+                <div class="principles-bg">
+                    <img src="img/num-bg.png" alt="Фон">
+                </div>
+                <div class="container">
+                    <div class="row justify-content-between">
+
+                        <div class="col-xl-5 col-12">
+                            <h2 class="principles-title title">Стальные <br>принципы</h2>
+                        </div>
+
+                        <div class="col-xl-5 col-12">
+                            <div class="principles-list">
+                                <div class="principles-item">Делаем больше <br>меньшими средствами</div>
+                                <div class="principles-item">Планируем результат, <br>а&nbsp;не&nbsp;рабочее время</div>
+                                <div class="principles-item">Ориентируемся <br>на&nbsp;перспективу</div>
+                                <div class="principles-item">Знаем цену <br>сказанного слова</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="center">
+                <div class="container">
+
+                    <div class="center-top row justify-content-between">
+
+                        <div class="col-lg-5 col-12">
+                            <h2 class="center-title title">
+                                Всегда в центре <br>событий отрасли
+                            </h2>
+                        </div>
+
+                        <div class="col-lg-5 col-12">
+                            <div class="center-text">
+                                <p>ИнПроТех — постоянный участник отраслевых мероприятий, профильных выставок и
+                                    технических конференций в странах СНГ.</p>
+                                <p class="d-none d-lg-block">Все, что важно знать о рынке, технологиях и реальной
+                                    практике внедрения — в нашем блоге</p>
+
+                                <a href="#" class="center-link d-none d-lg-inline-block">Читать блог</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- slider OUTSIDE container (ВАЖНО) -->
+                <div class="center-slider swiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide"><img src="img/center1.png" alt="Фото"></div>
+                        <div class="swiper-slide"><img src="img/center2.png" alt="Фото"></div>
+                        <div class="swiper-slide"><img src="img/center1.png" alt="Фото"></div>
+                        <div class="swiper-slide"><img src="img/center2.png" alt="Фото"></div>
+                        <div class="swiper-slide"><img src="img/center1.png" alt="Фото"></div>
+
+                    </div>
+                </div>
+                <div class="center-mobile d-lg-none">
+                    <div class="container">
+                        <p>Все, что важно знать о рынке, технологиях и реальной практике внедрения — в нашем блоге</p>
+                        <a href="#" class="center-link">Читать блог</a>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="force">
+                <div class="container">
+                    <h2 class="force-title title">Сильные инструменты, <br>мощные технологии</h2>
+                    <div class="row g-0 g-lg-3 numbers-list">
+
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">Прямые контракты <br>с&nbsp;производителями</p>
+                                <p class="numbers-text">Работаем напрямую с&nbsp;Rocklabs, OREAS, AMIS и&nbsp;другими
+                                    брендами — так мы всегда обеспечиваем оперативную техподдержку</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">Закрываем <br>все потребности</p>
+                                <p class="numbers-text">Полный цикл поставок в&nbsp;лаборатории — от&nbsp;оборудования
+                                    до&nbsp;комплексных решений</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">Оплата на&nbsp;ваших <br>заказчиках</p>
+                                <p class="numbers-text">Подстраиваемся под реалии заказчика: возможна поставка с
+                                    отсрочкой, этапность реализации, договорные формы под внутренний регламент
+                                    предприятия</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">Участие в&nbsp;тендерах <br>и&nbsp;закупках</p>
+                                <p class="numbers-text">Работаем в правовом поле — аккредитованы на крупнейших
+                                    электронных торговых площадках и готовы к участию в тендерах и аукционах, а наша
+                                    репутация надежного делового партнера говорит сама за себя</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">Максимум <br>за&nbsp;разумную цену</p>
+                                <p class="numbers-text">Имеем прямые контракты, гибкие условия и собственную логистику —
+                                    предлагаем конкурентное соотношение «цена качество» даже для нестандартных решений
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">Оборудование всегда <br>в&nbsp;наличии на&nbsp;складе</p>
+                                <p class="numbers-text">Держим запасы ходовых позиций, чтобы обеспечивать быструю
+                                    доставку без срывов графика и простоев</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">Инженерная поддержка <br>и&nbsp;сервис</p>
+                                <p class="numbers-text">Помогаем не только с выбором оборудования, но и с его
+                                    внедрением, настройкой, техническим сопровождением</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="numbers-item">
+                                <p class="numbers-num">Международная <br>экспертиза команды</p>
+                                <p class="numbers-text">Наши специалисты владеют иностранными языками и знают процессы
+                                    заказчиков изнутри — это ускоряет согласования и выводит сотрудничество на мировой
+                                    уровень</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="pik">
+                <div class="container">
+
+                    <div class="row g-lg-3 g-0 pik-row justify-content-between">
+
+                        <!-- LEFT -->
+                        <div class="col-lg-6 col-12 pik-left">
+                            <h2 class="pik-title title">Оставайтесь «на&nbsp;пике» отрасли <br>вместе с&nbsp;ИнПроТех
+                            </h2>
+
+                            <div class="pik-image">
+                                <img src="img/pik.png" alt="Команда">
+                            </div>
+                        </div>
+
+                        <!-- RIGHT -->
+                        <div class="col-lg-6 col-12 pik-right">
+
+                            <p class="pik-text">
+                                Подпишитесь на наши новости
+                            </p>
+
+                            <form class="pik-form">
+
+                                <input type="text" placeholder="Имя" class="form-input" required>
+                                <input type="email" placeholder="Email" class="form-input" required>
+                                <button type="submit" class="pik-btn">
+                                    Подписаться на e-mail рассылку
+                                </button>
+
+                                <label class="pik-checkbox mb-3">
+                                    <input type="checkbox" checked>
+                                    <span>Нажимая кнопку, я соглашаюсь с политикой конфиденциальности</span>
+                                </label>
+
+                                <label class="pik-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span>Даю согласие на обработку персональных данных, а также на получение
+                                        информационных и рекламных рассылок</span>
+                                </label>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+        <footer class="footer">
+            <div class="footer-bg">
+                <img src="img/footer-bg.png" alt="Фон">
+            </div>
+            <div class="container">
+
+                <div class="row footer-grid">
+
+                    <!-- 1 -->
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 footer-hide-390">
+                        <h3 class="footer-name">Инжиниринг</h3>
+
+
+
+                        <ul class="footer-list">
+                            <li><a href="#">Подготовка исходных данных для проектирования, оказание технической
+                                    помощи</a></li>
+                            <li><a href="#">Сопровождение строительных работ</a></li>
+                            <li><a href="#">Комплектация оборудованием новых и&nbsp;действующих лабораторий</a></li>
+                            <li><a href="#">Внедрение новых технологических единиц в действующие процессы</a></li>
+                            <li><a href="#">Обучение и консалтинг</a></li>
+                            <li><a href="#">Помощь в подготовке к&nbsp; аккредитации и сертификации</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-5 footer-another">
+                        <ul class="footer-list">
+                            <li><a href="#">Пусконаладочные работы</a></li>
+                            <li><a href="#">Монтаж и сборка</a></li>
+                            <li><a href="#">Настройка и наладка</a></li>
+                            <li><a href="#">Интеграция в действующий технологический процесс</a></li>
+                            <li><a href="#">Подключение к&nbsp; инженерным системам</a></li>
+                            <li><a href="#">Проверка работоспособности</a></li>
+                            <li><a href="#">Обучение и инструктаж персонала</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 footer-hide-390">
+                        <h3 class="footer-name">Продукция</h3>
+
+                        <ul class="footer-list">
+                            <li><a href="#">Пробоподготовка</a></li>
+                            <li><a href="#">Пробирный анализ</a></li>
+                            <li><a href="#">Промышленная химия и реагенты</a></li>
+                            <li><a href="#">Элементный анализ</a></li>
+                            <li><a href="#">Мобильные лаборатории</a></li>
+                            <li><a href="#">Лабораторная мебель</a></li>
+                            <li><a href="#">Общелабораторное оборудование</a></li>
+                            <li><a href="#">Лабораторные весы</a></li>
+                            <li><a href="#">Лабораторная посуда</a></li>
+                            <li><a href="#">Стандартные образцы</a></li>
+                            <li><a href="#">Собственное производство</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+
+                        <div class="footer-contacts">
+
+                            <div class="footer-address">
+                                <p>199406, г. Санкт-Петербург, ул. Гаванская д. 43</p>
+
+                                <a href="#">Смотреть на карте</a>
+                            </div>
+
+                            <div class="footer-phones">
+                                <a href="mailto:info@enprotech.ru">info@enprotech.ru</a>
+                                <a href="tel:+78126001217">+7 (812) 600-12-17</a>
+                            </div>
+
+                            <div class="footer-socials">
+                                <a href="#"><img src="img/what.svg" alt="Иконка"></a>
+                                <a href="#"><img src="img/vk.svg" alt="Иконка"></a>
+                                <a href="#"><img src="img/teleg.svg" alt="Иконка"></a>
+                                <a href="#"><img src="img/youtube.svg" alt="Иконка"></a>
+                                <a href="#"><img src="img/insta.svg" alt="Иконка"></a>
+                                <a href="#"><img src="img/pinter.svg" alt="Иконка"></a>
+                            </div>
+
+                            <ul class="footer-links">
+                                <li><a href="#">О нас</a></li>
+                                <li><a href="#">Новости</a></li>
+                                <li><a href="#">Блог</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="footer-bottom row align-items-center">
+
+                    <div class="col-12 col-lg-3">
+                        <a href="#" class="footer-bottom-link">
+                            Политика конфиденциальности
+                        </a>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <a href="#" class="footer-bottom-link">
+                            Политика обработки персональных данных
+                        </a>
+                    </div>
+
+                    <div class="col-12 col-lg-3">
+                        <a href="#" class="doctor">
+                            <img src="img/doctor.svg" alt="КДМ">
+                            Сделано в «Клинике <br>доброго маркетолога»
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
