@@ -192,84 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
         resizeTimeout = setTimeout(initManagerSlider, 200);
     });
 
-
-    
-
-    
-
-    // const principleElements = gsap.utils.toArray(".principles-item");
-    
-    // let state = { index: 0 };
-    
-    // function render(activeIndex) {
-    
-    //   principleElements.forEach((el, i) => {
-    
-    //     // активный ВСЕГДА доезжает в одну и ту же точку (0)
-    //     if (i === activeIndex) {
-    
-    //       gsap.to(el, {
-    //         y: 0,
-    //         opacity: 1,
-    //         scale: 1,
-    //         duration: 0.5,
-    //         ease: "power2.out"
-    //       });
-    
-    //     }
-    
-    //     // все предыдущие УХОДЯТ ВВЕРХ (за экран)
-    //     else if (i < activeIndex) {
-    
-    //       gsap.to(el, {
-    //         y: -200,   // вверх за границу
-    //         opacity: 0,
-    //         duration: 0.5,
-    //         ease: "power2.out"
-    //       });
-    
-    //     }
-    
-    //     // следующие пока ждут
-    //     else {
-    
-    //       gsap.to(el, {
-    //         y: 0,
-    //         opacity: 0.2,
-    //         scale: 0.98,
-    //         duration: 0.5,
-    //         ease: "power2.out"
-    //       });
-    
-    //     }
-    
-    //   });
-    
-    // }
-    
-    // ScrollTrigger.create({
-    //   trigger: ".principles",
-    //   start: "top top",
-    //   end: "+=2500",
-    //   pin: true,
-    //   scrub: true,
-    
-    //   onUpdate: (self) => {
-    
-    //     const index = Math.round(
-    //       self.progress * (principleElements.length - 1)
-    //     );
-    
-    //     if (index !== state.index) {
-    //       state.index = index;
-    //       render(index);
-    //     }
-    
-    //   }
-    // });
-    
-    // render(0);
-
     
 
     const mm = gsap.matchMedia();
@@ -370,5 +292,31 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+
+
+    const button = document.querySelector(".another-news-btn");
+    const items = document.querySelectorAll(".news-item");
+
+    const limit = 6;
+    let expanded = false;
+
+    
+    function render() {
+    items.forEach((item, index) => {
+        if (index >= limit) {
+        item.classList.toggle("is-hidden", !expanded);
+        }
+    });
+
+    button.textContent = expanded ? "Скрыть" : "Показать больше";
+    }
+
+    button.addEventListener("click", (e) => {
+    e.preventDefault();
+    expanded = !expanded;
+    render();
+    });
+
+    render();
 
 });
