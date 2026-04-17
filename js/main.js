@@ -297,26 +297,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const button = document.querySelector(".another-news-btn");
     const items = document.querySelectorAll(".news-item");
 
-    const limit = 6;
-    let expanded = false;
-
+    if(button) {
+        const limit = 6;
+        let expanded = false;
     
-    function render() {
-    items.forEach((item, index) => {
-        if (index >= limit) {
-        item.classList.toggle("is-hidden", !expanded);
+        
+        function render() {
+        items.forEach((item, index) => {
+            if (index >= limit) {
+            item.classList.toggle("is-hidden", !expanded);
+            }
+        });
+    
+        button.textContent = expanded ? "Скрыть" : "Показать больше";
         }
-    });
+    
+        button.addEventListener("click", (e) => {
+        e.preventDefault();
+        expanded = !expanded;
+        render();
+        });
+    
+        render();
 
-    button.textContent = expanded ? "Скрыть" : "Показать больше";
     }
-
-    button.addEventListener("click", (e) => {
-    e.preventDefault();
-    expanded = !expanded;
-    render();
-    });
-
-    render();
+   
 
 });
