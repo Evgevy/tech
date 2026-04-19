@@ -228,7 +228,7 @@ ul {
     background: rgba(0, 0, 0, 1);
     padding: 50px 20px;
     transform: translateX(100%);
-    transition: 0.3s ease;
+    transition: .3s;
     z-index: 9999;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     overflow-y: auto; 
@@ -367,6 +367,8 @@ ul {
 }
 
 .hero-btn {
+    position: relative;
+    z-index: 1;
     background: rgba(225, 37, 27, 1);
     max-width: 220px;
     width: 100%;
@@ -2295,7 +2297,84 @@ ul {
     transform: scale(1.05);
 }
   
+.hero--obraz .hero-bg {
+    position: relative;
+    width: 55%;
+    right: -160px;
+    margin-top: -190px; 
+}
 
+.bg--obraz {
+    filter: blur(50px);
+    height: 75%;
+}
+
+.way-obraz-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.way-title-obraz span {
+    color: rgba(177, 177, 177, 1);
+}
+
+.way-text-obraz {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.obraz {
+    margin-top: -200px;
+}
+
+.bg--element {
+    filter: blur(50px);
+    width: 90%;
+}
+
+.hero--element .hero-text {
+    margin-bottom: 120px;
+}
+
+.hero--element .hero-bg {
+    margin-top: -50px;
+}
+
+.hero--obche .hero-bg {
+    width: 50%;
+    margin-top: -85px;
+}
+
+.stick .hero-bg {
+    position: relative;
+    width: 50%;
+    margin-top: -85px;
+    right: 45px;
+}
+
+.way.stick {
+    margin-top: -100px;
+}
+
+.stick .way-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.stick .way-card img {
+    object-fit: contain;
+    position: relative;
+    bottom: -10px;
+    margin-left: auto;
+}
+
+.stick .stick5 img {
+    width: 75%;
+}
 
 @media screen and (max-width: 1700px) {
 
@@ -2337,6 +2416,16 @@ ul {
     .hero--mod .hero-bg {
         margin-top: -111px;
         width: auto;
+    }
+
+    .hero--obraz .hero-bg {
+        width: 60%;
+        right: -120px;
+        margin-top: -180px; 
+    }
+
+    .stick .way-card {
+        min-height: 330px;
     }
 }
 
@@ -2511,7 +2600,22 @@ ul {
         font-size: 18px;
 
     }
-   
+
+
+    .hero--obraz .hero-bg {
+        width: 60%;
+        right: -100px;
+        margin-top: -130px;
+    }
+
+    .stick .way-card img {
+        right: 0px;
+        position: absolute;
+        bottom: 0;
+        width: auto;
+        height: 75%;
+        z-index: -1;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -2922,6 +3026,41 @@ ul {
         margin-top: -30px;
         width: 65%;
     }
+
+
+    .hero--obraz .hero-bg {
+        width: 90%;
+        right: -130px;
+        margin-top: -130px;
+    }
+
+    .obraz {
+        margin-top: 0px;
+    }
+
+    .way-title-obraz {
+        margin-bottom: 25px;
+    }
+
+    .hero--element .hero-bg {
+        margin-top: 0px;
+    }
+
+    .hero--obche .hero-bg {
+        margin-top: -20px;
+    }
+
+    .stick .hero-bg {
+        right: 0px;
+    }
+
+    .way.stick {
+        margin-top: 0;
+    }
+
+    .stick .way-card {
+        min-height: 265px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -3103,6 +3242,17 @@ ul {
         min-height: 200px;
     }
 
+
+    .hero--obraz .hero-bg {
+        right: -120px;
+        margin-top: -70px;
+    }
+
+    .hero--obraz .hero-btn {
+        margin-top: -100px;
+    }
+
+   
    
 }
 
@@ -3478,6 +3628,37 @@ ul {
         margin-top: -100px;
     }
 
+    .hero--obraz .hero-bg {
+        width: auto;
+        right: -10px;
+    }
+
+    .obraz {
+        padding: 40px 0;
+    }
+
+    .obraz .way-bottom p {
+        font-size: 14px;
+        max-width: 100%;
+        padding-left: 12px;
+    }
+
+    .obraz .way-bottom p br {
+        display: none;
+    }
+
+    .hero--element .hero-bg {
+        top: 70px;
+        right: -20px;
+    }
+
+    .hero--obche .hero-bg {
+        top: 40px;
+        margin-top: -50px;
+    }
+
+   
+
 }
 
 @media screen and (max-width: 450px) {
@@ -3500,6 +3681,15 @@ ul {
 
     .way--mod .way-card h3 {
         font-size: 10px;
+    }
+
+    .way-text-obraz {
+        font-size: 14px;
+    }
+
+    .hero--obche .hero-bg {
+        width: 90%;
+        right: -30px;
     }
 }
 
@@ -3581,5 +3771,9 @@ ul {
     .hero--probir .hero-bg {
         top: 70px;
         margin-top: -90px;
+    }
+
+    .obche .way-card h3 {
+        font-size: 11px;
     }
 }
