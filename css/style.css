@@ -2333,7 +2333,7 @@ ul {
 
 .bg--element {
     filter: blur(50px);
-    width: 90%;
+    height: 90%;
 }
 
 .hero--element .hero-text {
@@ -3655,6 +3655,14 @@ ul {
     .hero--obche .hero-bg {
         top: 40px;
         margin-top: -50px;
+    }
+
+    .bg--obraz {
+        filter: blur(0px);
+    }
+
+    .bg--element {
+        filter: blur(0px);
     }
 
    
