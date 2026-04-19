@@ -1868,6 +1868,10 @@ ul {
     transition: .3s;
 }
 
+.pik-btn:hover {
+    opacity: 0.8;
+}
+
 .pik-checkbox {
     display: flex;
     align-items: start;
