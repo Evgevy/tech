@@ -2171,9 +2171,9 @@ ul {
     object-fit: contain;
 }
 
-.bg--prob {
+/* .bg--prob {
     filter: blur(50px);
-}
+} */
 
 .body-prob .title-big--mobile { 
     display: none; 
