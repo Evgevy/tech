@@ -1,7 +1,12 @@
-Fancybox.bind("[data-fancybox]", {});
-gsap.registerPlugin(ScrollTrigger);
+
 document.addEventListener("DOMContentLoaded", function () {
-   
+    if (typeof Fancybox !== "undefined") {
+        Fancybox.bind("[data-fancybox]", {});
+    }
+
+    if (typeof gsap !== "undefined") {
+        gsap.registerPlugin(ScrollTrigger);
+    }
     // BURGER (1 раз!)
     const burger = document.getElementById('burgerBtn');
     const menu = document.getElementById('mobileMenu');
@@ -193,8 +198,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     
-
-    const mm = gsap.matchMedia();
+    if (typeof gsap !== "undefined") {
+        const mm = gsap.matchMedia();
 
     // desktop only
     mm.add("(min-width: 1200px)", () => {
@@ -271,6 +276,8 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     });
+    }
+    
 
     const centerSlider = new Swiper(".center-slider", {
         slidesPerView: "auto",
@@ -321,6 +328,25 @@ document.addEventListener("DOMContentLoaded", function () {
         render();
 
     }
+
+    document.querySelectorAll(".product-tab-btn").forEach(btn => {
+        if (btn) {
+            btn.addEventListener("click", () => {
+    
+                const tab = btn.dataset.tab;
+        
+                // активная кнопка
+                document.querySelectorAll(".product-tab-btn").forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+        
+                // контент
+                document.querySelectorAll(".product-tab-content").forEach(c => c.classList.remove("active"));
+                document.querySelector(`[data-content="${tab}"]`).classList.add("active");
+        
+            });
+        }
+        
+    });
    
 
 });
