@@ -279,26 +279,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
 
-    const centerSlider = new Swiper(".center-slider", {
-        slidesPerView: "auto",
-        spaceBetween: 24,
-        loop: true,
-        speed: 5000,
-        autoplay: {
-          delay: 500,
-          disableOnInteraction: false
-        },
-        freeMode: true,
-        grabCursor: true,
-        breakpoints: {
-            300: {
-              spaceBetween: 10
+    const slider = document.querySelector(".center-slider");
+
+    if (slider && typeof Swiper !== "undefined") {
+        
+        const centerSlider = new Swiper(slider, {
+            slidesPerView: "auto",
+            spaceBetween: 24,
+            loop: true,
+            speed: 5000,
+            autoplay: {
+                delay: 500,
+                disableOnInteraction: false
             },
-            550: {
-              spaceBetween: 24
+            freeMode: true,
+            grabCursor: true,
+            breakpoints: {
+                300: { spaceBetween: 10 },
+                550: { spaceBetween: 24 }
             }
-        }
-    });
+        });
+    
+    }
 
 
     const button = document.querySelector(".another-news-btn");
@@ -347,6 +349,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
     });
+
+    const cookie = document.getElementById("cookie");
+    const btn = document.getElementById("cookieBtn");
+
+    if (cookie && btn) {
+
+        const isAccepted = localStorage.getItem("cookieAccepted");
+
+        if (!isAccepted) {
+
+            setTimeout(() => {
+                cookie.classList.add("show");
+            }, 2000);
+
+        }
+
+        btn.addEventListener("click", () => {
+            localStorage.setItem("cookieAccepted", "true");
+            cookie.classList.remove("show");
+        });
+
+    }
+
+    const stickyBtn = document.querySelector(".sticky-btn");
+
+    if (stickyBtn) {
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                stickyBtn.classList.add("show");
+            }, 4000);
+        });
+    }
    
 
 });

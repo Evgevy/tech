@@ -12,6 +12,12 @@ body.no-scroll {
     overflow: hidden;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .wrapper {
     min-height: 100%;
     display: flex;
@@ -57,7 +63,6 @@ ul {
 
 .header-wrapper {
     position: relative;
-    z-index: 1;
 }
 
 .bg {
@@ -98,7 +103,7 @@ ul {
 
 .header {
     position: relative;
-    z-index: 10;
+    z-index: 15;
 }
 
 .header-logo-link {
@@ -2646,6 +2651,244 @@ ul {
     margin-bottom: 50px;
 }
 
+.hero--products .hero-list {
+    margin-bottom: 110px;
+}
+
+.hero--products .hero-bg {
+    position: relative;
+    width: 65%;
+}
+
+.products-title {
+    margin-bottom: 24px;
+}
+
+.products-text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 40px;
+}
+
+.products-list {
+    gap: 17px 24px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.products-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    min-height: 70px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: rgba(255, 255, 255, 0.8);
+    transition: .3s;
+}
+
+.products-link:hover {
+    background: rgba(225, 37, 27, 1);
+}
+
+.products-inner {
+    padding: 50px 0;
+}
+
+.products-info {
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+}
+
+.products-block-title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 130%;
+    letter-spacing: -3%;
+    margin: 0 0 24px;
+}
+
+.products-block-text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.products-block-btn {
+    max-width: 215px;
+    position: relative;
+    z-index: 1;
+    background: rgba(225, 37, 27, 1);
+    width: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    color: rgba(255, 255, 255, 1);
+    margin-top: auto;
+    transition: .3s;
+}
+
+.products-block-btn:hover {
+    opacity: 0.8;
+}
+
+.way--picture .way-card img {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    transition: .3s;
+}
+
+.way--picture .way-card:hover img {
+    transform: scale(1.05);
+}
+
+.products {
+    padding: 50px 0 0;
+    overflow: hidden;
+}
+
+#prob {
+    position: relative;
+}
+
+#prob::after {
+    display: none;
+    content: '';
+    position: absolute;
+    background: url(../img/scroll-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transform: rotate(180deg);
+    left: -150px;
+    top: 0;
+    width: 150%;
+    height: 25%;
+    z-index: -1;
+}
+
+.cookie {
+    
+    left: 50%;
+    transform: translateX(-50%);    
+    bottom: 150px;
+    max-width: 755px;
+    width: calc(100% - 32px);
+    background: rgba(26, 26, 26, 1);
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    align-items: start;
+    gap: 24px;
+    padding: 21px 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.cookie-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.cookie-text a {
+    display: inline-block;
+    text-decoration: underline;
+    transition: .3s;
+}
+
+.cookie-text a:hover {
+    opacity: 0.8;
+}
+
+.cookie-btn {
+    max-width: 145px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background: rgb(225, 37, 27);
+    border-width: medium;
+    border-style: none;
+    border-color: currentcolor;
+    border-image: initial;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+.cookie-btn:hover {
+    opacity: 0.8;
+}
+
+.cookie.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sticky-btn {
+    position: fixed;
+    right: 70px;
+    bottom: 40px;
+    width: 350px;
+    background: #e1251b;
+    color: #fff;
+    padding: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: 0.3s ease;
+}
+
+.sticky-btn:hover {
+    opacity: 0.8;
+}
+
+.sticky-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.sticky-btn.show:hover {
+    opacity: 0.8;
+}
+
 @media screen and (max-width: 1700px) {
 
     /* .bg {
@@ -2655,6 +2898,12 @@ ul {
 
     .hero-wrapper {
         padding: 100px 0 250px;
+    }
+
+    .hero--products .hero-bg {
+        position: relative;
+        width: 65%;
+        right: 130px;
     }
 }
 
@@ -2700,6 +2949,20 @@ ul {
 
     .diches .hero-bg {
         margin-top: -150px;
+    }
+
+    .hero--products .hero-bg {
+        width: 65%;
+        right: 40px;
+        margin-top: -130px;
+    }
+
+    .products-list {
+        gap: 10px;
+    }
+
+    .products-link {
+        font-size: 18px;
     }
 }
 
@@ -2902,6 +3165,28 @@ ul {
     .own .way-list2 .stick2 img {
         width: 65%;
     }
+
+    .products-inner .way-card {
+        min-height: 300px;
+    }
+
+    .products-inner .way-card h3 {
+        font-size: 18px;
+    }
+
+    .products-info {
+        min-height: 300px;
+    }
+
+    .products-block-title {
+        font-size: 24px;
+    }
+
+    .products-block-text {
+        font-size: 16px;
+    }
+
+
 }
 
 @media screen and (max-width: 991px) {
@@ -3391,6 +3676,35 @@ ul {
     .char-item-desc {
         font-size: 16px;
     }
+
+    .hero--products .title-big br {
+        display: none;
+    }
+
+    .hero--products .hero-bg {
+        width: 100%;
+        margin-top: -200px;
+    }
+
+    .products-info {
+        min-height: auto;
+    }
+
+    .way--picture .way-card img {
+        width: 67%;
+    }
+
+    .products-text {
+        font-size: 16px;
+    }
+
+    .products-text br {
+        display: none;
+    }
+
+    .products-link {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -3627,6 +3941,45 @@ ul {
 
     .single-title {
         margin-bottom: 30px;
+    }
+
+    .hero--products .hero-list {
+        width: 100%;
+    }
+
+    .hero--products .hero-bg {
+        margin-top: -170px;
+    }
+
+    .products-text {
+        margin-bottom: 50px;
+    }
+
+    .products-inner {
+        padding: 30px 0;
+    }
+
+    #prob::after {
+        display: block;
+    }
+
+    .cookie {
+        gap: 12px;
+    }
+
+    .cookie-text {
+        font-size: 14px;
+    }
+
+    .cookie-btn {
+        padding: 14px;
+        font-size: 14px;
+        align-self: center;
+    }
+
+    .sticky-btn {
+        padding: 20px;
+        font-size: 20px;
     }
 }
 
@@ -3974,11 +4327,11 @@ ul {
     }
 
     .way--prob .way-card {
-        min-height: 150px;
+        min-height: 180px;
     }
 
     .way--prob .way-card h3 {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .way--prob .way-card img {
@@ -4104,6 +4457,69 @@ ul {
     .char-item {
         flex-direction: column;
     }
+
+    .hero--products {
+        position: relative;
+    }
+
+    .hero--products .hero-bg {
+       display: none;
+    }
+
+    .hero--products::after {
+        content: '';
+        background: url(../img/products-bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: -50px;
+        z-index: -1;
+    }
+
+    .hero--products .title-big {
+        margin-bottom: 10px;
+    }
+
+    .hero--products .hero-list {
+        margin-bottom: 20px;
+        padding: 70px 20px 30px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.008) 0%, rgba(255, 255, 255, 0.08) 100%);
+        backdrop-filter: blur(7px);
+    }
+
+    .hero--products .hero-list li {
+        font-size: 16px;
+    }
+
+    .way--picture .way-card {
+        min-height: 220px;
+    }
+
+    .way--picture .way-card h3 {
+        font-size: 12px;
+    }
+
+    .way--picture .way-card img {
+        width: 65%;
+        height: 70%;
+    }
+
+    .products-block-title {
+        font-size: 20px;
+    }
+
+    .cookie {
+        flex-direction: column;
+    }
+
+    .cookie-btn {
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -4148,6 +4564,17 @@ ul {
     .own .way-list2 .stick2 img {
         width: 87%;
         height: 81%;
+    }
+
+    .way--picture .way-card img {
+        width: 80%;
+        height: 68%;
+    }
+
+    .sticky-btn {
+        right: 16px;
+        bottom: 16px;
+        width: calc(100% - 32px);
     }
 }
 
@@ -4283,4 +4710,9 @@ ul {
     .hero-single-btn {
         max-width: 100%;
     }
+
+    .way--picture .way-card {
+        padding-left: 10px;
+    }
+
 }
