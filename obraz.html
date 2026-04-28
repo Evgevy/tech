@@ -168,7 +168,8 @@
                             ИнПроТех — официальный дистрибьютор ведущих мировых производителей на территории СНГ
                         </p>
 
-                        <button class="hero-btn d-none d-lg-inline-block" type="button">
+                        <button class="hero-btn d-none d-lg-inline-block" type="button" data-bs-toggle="modal"
+                            data-bs-target="#kpModal">
                             Получить расчет
                         </button>
                     </div>
@@ -178,7 +179,7 @@
                     </div>
 
                     <div class="col-12 order-3 d-lg-none">
-                        <button class="hero-btn" type="button">
+                        <button class="hero-btn" type="button" data-bs-toggle="modal" data-bs-target="#kpModal">
                             Получить расчет
                         </button>
                     </div>
@@ -539,6 +540,57 @@
             </div>
         </div>
     </footer>
+
+    <div id="cookie" class="cookie">
+
+        <p class="cookie-text">
+            Используя данный сайт, вы даете согласие на использование файлов cookie, согласно <a
+                href="/privacy-policy">политики конфиденциальности</a>.
+        </p>
+
+        <button id="cookieBtn" class="cookie-btn">
+            Хорошо
+        </button>
+
+    </div>
+    <button class="sticky-btn" data-bs-toggle="modal" data-bs-target="#kpModal">
+        Получить расчёт
+    </button>
+
+    <div class="modal fade" id="kpModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content p-4">
+
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
+
+                <h3 class="mb-4">
+                    Проанализируем запрос<br>
+                    и&nbsp;подготовим индивидуальное КП
+                </h3>
+
+                <form class="form-main-form row justify-content-between">
+
+                    <div class="col-12 form-left">
+                        <input type="text" placeholder="Имя" class="form-input">
+                        <input type="tel" placeholder="Телефон" class="form-input">
+                        <input type="email" placeholder="Email" class="form-input">
+                        <textarea placeholder="Оставьте комментарий" class="form-textarea"></textarea>
+
+                        <button type="submit" class="form-main-btn">
+                            Получить КП
+                        </button>
+
+                        <label class="form-checkbox">
+                            <input type="checkbox" checked>
+                            <span>
+                                Нажимая кнопку, я соглашаюсь с <a href="#">политикой конфиденциальности</a></span>
+                        </label>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>

@@ -3000,6 +3000,17 @@ ul {
     margin-bottom: 87px;
 }
 
+.modal-content {
+    background: rgba(15, 11, 11, 1);
+    border: 1px solid rgba(55, 55, 55, 1);
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+
+
 
 @media screen and (max-width: 1700px) {
 
