@@ -372,14 +372,75 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    const stickyBtn = document.querySelector(".sticky-btn");
+    // const stickyBtn = document.querySelector(".sticky-btn");
 
-    if (stickyBtn) {
-        window.addEventListener("load", () => {
-            setTimeout(() => {
+    // if (stickyBtn) {
+    //     window.addEventListener("load", () => {
+    //         setTimeout(() => {
+    //             stickyBtn.classList.add("show");
+    //         }, 4000);
+    //     });
+    // }
+
+    const stickyBtn = document.querySelector(".sticky-btn");
+    const firstSection = document.querySelector("section"); 
+
+    if (stickyBtn && firstSection) {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+
+            
+            if (!entry.isIntersecting) {
                 stickyBtn.classList.add("show");
-            }, 4000);
+            }
+        }, {
+            threshold: 0
         });
+
+        observer.observe(firstSection);
+    }
+
+    // PARALLAX
+    if (typeof gsap !== "undefined") {
+
+        const parallaxItems = document.querySelectorAll(".parallax");
+    
+        if (parallaxItems.length) {
+    
+            parallaxItems.forEach((item, index) => {
+    
+                let yValue = 0;
+    
+                // верхний — вниз
+                if (index === 0) {
+                    yValue = 350;
+                }
+    
+                // нижние — вверх
+                if (index === 1) {
+                    yValue = -260;
+                }
+    
+                if (index === 2) {
+                    yValue = -340;
+                }
+    
+                gsap.to(item, {
+                    y: yValue,
+                    x: index % 2 === 0 ? 30 : -30,
+                    ease: "none",
+    
+                    scrollTrigger: {
+                        trigger: item.closest("section") || item,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 0.5
+                    }
+                });
+    
+            });
+    
+        }
     }
    
 

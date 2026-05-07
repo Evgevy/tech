@@ -543,7 +543,7 @@ ul {
     border: 1px solid rgba(55, 55, 55, 1);
     background: rgba(255, 255, 255, 0.05);
     padding: 32px 32px 0;
-    min-height: 380px;
+    min-height: 340px;
     overflow: hidden;
 }
 
@@ -572,6 +572,7 @@ ul {
 
 .way-img {
     transition: .3s;
+    z-index: -1;
 }
 
 .img-1 {
@@ -579,7 +580,7 @@ ul {
     right: 0;
     bottom: 0;
     width: 320px;
-    height: 300px;
+    height: 280px;
 }
 
 .img-2 {
@@ -587,15 +588,23 @@ ul {
     right: 0;
     bottom: 0;
     width: 320px;
-    height: 300px;
+    height: 280px;
 }
 
 .img-3 {
     position: absolute;
     right: 0;
-    
+    bottom: 0;
     width: 320px;
-    height: 300px;
+    height: 280px;
+}
+
+.img-4 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: 250px;
 }
 
 .numbers {
@@ -644,6 +653,11 @@ ul {
 
 .border-left {
     border-left: none !important;
+}
+
+.border-top::after,
+.border-left::after {
+    display: none;
 }
 
 .numbers-num {
@@ -710,16 +724,16 @@ ul {
 .marquee-group {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 46px;
     flex-shrink: 0;
 }
 
 .marquee img {
-    width: 220px;
-    height: 40px;
+    width: 250px;
+    height: 50px;
     object-fit: contain;
     filter: grayscale(100%);
-    opacity: 0.6;
+    /* opacity: 0.6; */
 }
 
 
@@ -1091,7 +1105,7 @@ ul {
   }
 
   .form-checkbox a {
-    display: inline-block;
+    display: inline;
     transition: .3s;
     text-decoration: underline;
   }
@@ -3009,7 +3023,38 @@ ul {
     filter: invert(1);
 }
 
+.parallax {
+    will-change: transform;
+    pointer-events: none;
+}
 
+.parallax.el-1 {
+    position: absolute;
+    width: 223px;
+    height: 160px;
+    z-index: -1;
+    top: 0px;
+    right: 300px;
+}
+
+.parallax.el-2 {
+    position: absolute;
+    width: 350px;
+    height: 275px;
+    z-index: -1;
+    bottom: -50px;
+    left: 400px;
+}
+
+.parallax.el-3 {
+    position: absolute;
+    width: 240px;
+    height: 190px;
+    z-index: -1;
+    bottom: -50px;
+    left: -100px;
+    filter: grayscale(100%) blur(2px);
+}
 
 
 @media screen and (max-width: 1700px) {
@@ -3114,6 +3159,20 @@ ul {
 
     .mission::after {
         bottom: 100px;
+    }
+
+
+    .parallax.el-1 {
+        position: absolute;
+        width: 223px;
+        height: 160px;
+        z-index: -1;
+        top: 0px;
+        right: 200px;
+    }
+
+    .parallax.el-2 {
+        left: 350px;
     }
 }
 
@@ -3315,6 +3374,22 @@ ul {
     }
 
 
+}
+
+@media screen and (max-width: 1024px) {
+    .parallax.el-1 {
+        position: absolute;
+        width: 223px;
+        height: 160px;
+        z-index: -1;
+        top: 0px;
+        right: 50px;
+    }
+
+    .parallax.el-2 {
+        left: 250px;
+        bottom: -100px;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -3839,6 +3914,18 @@ ul {
     .products-link {
         font-size: 14px;
     }
+
+    .parallax.el-1 {
+        top: -123px;
+    }
+
+    .parallax.el-2 {
+        bottom: -245px;
+    }
+
+    .parallax.el-3 {
+        bottom: -150px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -4119,6 +4206,20 @@ ul {
     .hero--obraz .hero-bg {
         right: -170px;
         margin-top: -120px;
+    }
+
+    .parallax.el-2 {
+        left: 150px;
+        width: 300px;
+        height: 240px;
+        bottom: -180px;
+    }
+
+    .parallax.el-3 {
+        bottom: 0;
+        left: -50px;
+        width: 200px;
+        height: 160px;
     }
 }
 
@@ -4687,6 +4788,20 @@ ul {
         top: 50px;
         margin-top: -80px;
     }
+
+    .parallax.el-1 {
+        right: -40px;
+    }
+
+    .parallax.el-2 {
+        display: none;
+    }
+
+    .parallax.el-3 {
+        filter: grayscale(100%) blur(1px);
+        width: 145px;
+        height: 115px;
+    }
      
 }
 
@@ -4755,6 +4870,13 @@ ul {
 
     .way-title-obraz span br {
         display: none;
+    }
+
+    .parallax.el-1 {
+        top: -100px;
+        right: -20px;
+        width: 150px;
+        height: 120px;
     }
 }
 
