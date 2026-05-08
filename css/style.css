@@ -1457,7 +1457,7 @@ ul {
 .chtat-photo {
     max-width: 100%;
     height: auto;
-    aspect-ratio: 526/580;
+    aspect-ratio: 526/570;
     margin-bottom: 32px;
 }
 
@@ -1493,7 +1493,7 @@ ul {
     top: 0;
     z-index: -1;
     width: 100%;
-    height: 580px;
+    height: 570px;
 }
 
 .chtat-text p {
@@ -2777,9 +2777,14 @@ ul {
 
 .products-inner {
     padding: 50px 0;
+    display: flex;
+    align-items: flex-start;
 }
 
 .products-info {
+    position: sticky;
+    top: 20px; 
+    align-self: flex-start;
     display: flex;
     flex-direction: column;
     min-height: 380px;
@@ -2840,7 +2845,7 @@ ul {
 
 .products {
     padding: 50px 0 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #prob {
@@ -3897,6 +3902,7 @@ ul {
 
     .products-info {
         min-height: auto;
+        position: static;
     }
 
     .way--picture .way-card img {
@@ -4220,6 +4226,10 @@ ul {
         left: -50px;
         width: 200px;
         height: 160px;
+    }
+
+    .news-main-meta {
+        margin-bottom: 24px;
     }
 }
 
